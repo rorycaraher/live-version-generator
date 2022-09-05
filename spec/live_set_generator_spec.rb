@@ -1,6 +1,8 @@
+require 'fakefs/spec_helpers'
 require_relative '../lib/live_set_generator.rb'
 
 describe LiveSetGenerator do
+  include FakeFS::SpecHelpers
   context "creating" do 
     context "when generator is initialized" do
       generator = LiveSetGenerator.new
@@ -28,9 +30,10 @@ describe LiveSetGenerator do
         expect(generator.randomise_parameter(generator.get_midi_tracks, :send)).to be_kind_of(Nokogiri::XML::NodeSet)
       end
       
-      # it "exports a new version file" do
-
-      # end
+      it "exports a new version file"
+        FakeFS.with_fresh do
+          expect(generator.export_version).to be_kind_of(Integer)
+      end
     end
   end
 end
