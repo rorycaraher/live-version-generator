@@ -15,6 +15,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
+        credentials_json: '${{ secrets.CREDENTIALS_JSON }}'
         service_account: ${{ secrets.DEPLOY_SERVICE_ACCOUNT }}
 
     - id: 'upload-folder'
