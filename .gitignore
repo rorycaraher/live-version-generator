@@ -1,2 +1,2 @@
-output/*
-xml-01/Backup/*
+generator/output/*
+generator/xml-01/Backup/*
