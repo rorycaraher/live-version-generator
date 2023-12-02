@@ -1,2 +1,3 @@
 generator/output/*
-generator/xml-01/Backup/*
+generator/xml-01/*
+generator/xml/Backup/*
